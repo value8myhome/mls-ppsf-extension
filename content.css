@@ -1,0 +1,101 @@
+#mls-ppsf-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2147483647;
+  width: 380px;
+  min-width: 320px;
+  max-width: min(760px, 92vw);
+  min-height: 280px;
+  max-height: 80vh;
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  box-shadow: 0 16px 30px rgba(2, 6, 23, 0.45);
+  padding: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.4;
+  resize: both;
+  overflow: auto;
+}
+
+#mls-ppsf-panel * {
+  box-sizing: border-box;
+}
+
+.mls-ppsf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.mls-ppsf-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+#mls-ppsf-toggle {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#mls-ppsf-toggle:hover {
+  background: #334155;
+}
+
+.mls-ppsf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+  font-size: 13px;
+}
+
+.mls-ppsf-grid .label {
+  color: #94a3b8;
+}
+
+.mls-ppsf-grid .value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+#mls-ppsf-list {
+  margin-top: 10px;
+  max-height: 300px;
+  overflow: auto;
+  border-top: 1px solid #334155;
+  padding-top: 8px;
+  font-size: 12px;
+}
+
+#mls-ppsf-list ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+#mls-ppsf-list li {
+  margin-bottom: 4px;
+  color: #cbd5e1;
+}
+
+#mls-ppsf-panel.mls-ppsf-collapsed .mls-ppsf-grid,
+#mls-ppsf-panel.mls-ppsf-collapsed #mls-ppsf-list {
+  display: none;
+}
+
+@media print {
+  #mls-ppsf-panel {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

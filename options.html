@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MLS PPSF Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>MLS Price Per Sq Ft Settings</h1>
+      <p>
+        If your MLS fields are not detected automatically, add CSS selectors for checkbox rows,
+        sale price, and square footage.
+      </p>
+
+      <form id="settings-form">
+        <label>
+          Checkbox selector
+          <input id="checkboxSelector" type="text" placeholder="input[type='checkbox'], [role='checkbox'], [aria-checked='true'], [aria-checked='false']" />
+        </label>
+
+        <label>
+          Row selector
+          <input id="rowSelector" type="text" placeholder="tr, [role='row'], .row, li" />
+        </label>
+
+        <label>
+          Price selector (optional)
+          <input id="priceSelector" type="text" placeholder=".sale-price" />
+        </label>
+
+        <label>
+          Sqft selector (optional)
+          <input id="sqftSelector" type="text" placeholder=".sqft" />
+        </label>
+
+        <div class="actions">
+          <button type="submit">Save</button>
+          <button type="button" id="reset">Reset defaults</button>
+          <span id="status" role="status"></span>
+        </div>
+      </form>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
