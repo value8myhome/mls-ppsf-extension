@@ -205,13 +205,14 @@
 
     const salePriceByColumn = findValueByColumnLabel(
       row,
-      ["^price$", "sold\\s*price", "sale\\s*price", "closed\\s*price", "close\\s*price", "settled\\s*price"],
-      ["list\\s*price", "original\\s*list\\s*price"],
+      ["^price$", "^sp\\$$", "\\bsp\\$", "sold\\s*price", "sale\\s*price", "closed\\s*price", "close\\s*price", "settled\\s*price"],
+      ["^lp\\$$", "\\blp\\$", "list\\s*price", "original\\s*list\\s*price"],
       parseMoney
     );
     if (salePriceByColumn) return salePriceByColumn;
 
     const explicitSalePrice = findNumberNearLabel(text, [
+      "sp\\$",
       "sold\\s*price",
       "sale\\s*price",
       "closed\\s*price",
@@ -228,6 +229,7 @@
     if (plainPriceValue) return { value: plainPriceValue, source: "price label" };
 
     const listPrice = findNumberNearLabel(text, [
+      "lp\\$",
       "list\\s*price",
       "original\\s*list\\s*price"
     ]);
